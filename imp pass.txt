@@ -1,0 +1,176 @@
+ID:                 KUKREBH
+ 
+The following request(s):  DATAWAREHOUSE-PROD
+                   
+ 
+For: KUKREJA,BHARTI has been completed.
+ 
+You can view the temporary password for this request at the following URL: 
+https://SYSSEC.VZBI.COM/reqsys/viewpwrd.asp?reqnum=3674360
+ 
+
+###################teradata prod pass
+# for reset  https://syssec.vzbi.com/applreq/
+Req # 3674360 
+Temporary Password: y8QawRyS 
+
+updated pass
+ Roma_2gu
+	Roma_3gu
+	prod terdata env
+Roma_4gu
+
+
+# terdata prod temp pass
+dw prod temp pass
+v7NytOvb
+## expired 
+## req new one
+** Request #: 3709646
+
+##############teradata dev pass
+
+
+updated pass
+ Roma_2gu
+
+############pass for unix box
+
+qa1
+gchsc1lna023.itcent.ebiz.verizon.com   
+
+old pass
+Roma_1gu
+
+new pass
+Roma_2gu
+
+###############
+RID_980077760
+
+########
+pass for gchqaa= db
+!roma321
+
+##########################
+HR workways mob reg pass
+Roma_2gu
+
+VZ/opt/app/gchcle
+
+Rekha Jaganatharao  cameo poc
+
+Gopal, Mohanapriya X: 
+
+2:58:30 PM: sent the intermediate one  
+
+2:58:43 PM: vz2721 
+
+Kukreja, Bharti: 
+
+2:59:08 PM: thanks a ton, need to complete before going home :-) 
+
+Gopal, Mohanapriya X: 
+
+2:59:19 PM: yes, Np :-) 
+
+3:00:05 PM: sent advanced as well ---> Advanced - Secure Coding Java Developer Advanced: Program (VZ2729)
+
+113.128.166.179
+
+5:57:42 PM: hi Jayaraj 
+
+5:57:50 PM: Good evening 
+
+Manimuthu, Jayaraj X: 
+
+5:58:36 PM: Hi Bharti 
+
+5:58:36 PM: GE 
+
+Kukreja, Bharti: 
+
+5:59:07 PM: so jira collector is working fine? 
+
+Manimuthu, Jayaraj X: 
+
+5:59:29 PM: yes 
+
+5:59:38 PM: it showing some data 
+
+5:59:43 PM: but not validated yet 
+
+Kukreja, Bharti: 
+
+5:59:59 PM: ok 
+
+6:00:10 PM: what more changes r done 
+
+6:00:14 PM: can i validate? 
+
+Manimuthu, Jayaraj X: 
+
+6:00:21 PM: ok 
+
+Kukreja, Bharti: 
+
+6:00:58 PM: so what changes r done after that ? 
+
+6:01:12 PM: the code i forwarded 
+
+Manimuthu, Jayaraj X: 
+
+6:01:12 PM: no changes 
+
+Kukreja, Bharti: 
+
+6:01:35 PM: i thought Kalpana worked on it 
+
+6:01:44 PM: it is assigned to her rgt? 
+
+Manimuthu, Jayaraj X: 
+
+6:01:56 PM: she assigned it to me 
+
+Kukreja, Bharti: 
+
+6:02:01 PM: oh ok 
+
+6:02:26 PM: but we still have that problem 
+
+6:02:42 PM: that parameter is not getting sent to query 
+
+6:02:50 PM: as project no,team id 
+
+6:03:04 PM: *project no./team id   
+
+Manimuthu, Jayaraj X: 
+
+6:03:21 PM: ok.. will check that 
+
+Kukreja, Bharti: 
+
+6:03:33 PM: ok 
+
+6:03:38 PM: :-) 
+
+6:03:57 PM: I will validate the data it is giving mean while 
+
+Manimuthu, Jayaraj X: 
+
+6:03:57 PM: lol 
+
+6:04:07 PM: ok 
+
+
+6:57:30 PM: :: Manimuthu, Jayaraj X is away ::
+
+7:15:05 PM: :: Manimuthu, Jayaraj X is available ::
+
+8:40:46 PM: :: Manimuthu, Jayaraj X is in a meeting ::
+
+9:09:05 PM: :: Manimuthu, Jayaraj X is away ::
+Jun 17, 2016
+
+
+9:10:01 AM: :: Manimuthu, Jayaraj X is away ::
