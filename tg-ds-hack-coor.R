@@ -268,7 +268,7 @@ c
 # X-squared = 2500, df = 6, p-value < 2.2e-16
 # As the p-value 2.2e-16 is much less than the .05 significance level, 
 # we reject the null hypothesis that the liking habit is independent of the personal opinion
-plot(Train_filtered$personal_opinion_3, Train_filtered$Instant_liking_target)
+#plot(Train_filtered$personal_opinion_3, Train_filtered$Instant_liking_target)
 names(Train_filtered)
 
 survey_total<-Train_filtered
@@ -297,35 +297,73 @@ with(surveys, table(personal_opinion_3,Instant_liking_target))
 #                   6 804   0
 #                   7 371   0
 library(ggplot2)
-#install.packages("H:/kukrebh/d backup/R Packages/R Packages/labeling_0.3.zip", repos = NULL, type = "win.binary")
-ggplot(surveys, aes(x = Product_26, fill = Instant_liking_target)) + geom_bar()
+#1
+#install.packages("H:/kukrebh/SF code migration/packages/plyr_1.8.4.zip", repos = NULL, type = "win.binary")
+ggplot(surveys, aes(x = Product_26, fill = Instant_liking_target)) + geom_bar(position = "dodge")
+
 #for both
-ggplot(surveys_tt, aes(x = Product_26, fill = Instant_liking_target)) + geom_bar()
+#ggplot(surveys_tt, aes(x = Product_26, fill = Instant_liking_target)) + geom_bar()
 
-ggplot(surveys, aes(x = personal_opinion_3)) + geom_bar()
-ggplot(surveys, aes(x = personal_opinion_3, fill = Instant_liking_target)) + geom_bar()
-ggplot(surveys_tt, aes(x = personal_opinion_3, fill = Instant_liking_target)) + geom_bar()
+#2
+ggplot(surveys, aes(x = personal_opinion_3, fill = Instant_liking_target)) +
+  geom_bar(show.legend = TRUE)
+?geom_bar
 
+#3
 tb<-with(surveys, table(strength_of_deo_5,Instant_liking_target))
 tb<-as.data.frame(tb)
 tb
+ggplot(surveys, aes(x = strength_of_deo_5, fill = Instant_liking_target)) +  geom_bar(position = "dodge")
 
+#3a strength win
+surveys_b<-surveys[surveys$Instant_liking_target==1,]
+summary(surveys_b)
+ggplot(surveys_b, aes(x = strength_of_deo_5, fill = Instant_liking_target)) +  geom_bar(position = "dodge")
+
+#4
 ggplot(surveys, aes(x = cheap_6, fill = Instant_liking_target)) + geom_bar(position = "dodge")
 tb2<-with(surveys, table(cheap_6,Instant_liking_target))
-tb2<-as.data.frame(tb)
+tb2<-as.data.frame(tb2)
 tb2
+#4b
+ggplot(surveys_b, aes(x = cheap_6, fill = Instant_liking_target)) + geom_bar(position = "dodge")
 
-names(surveys)
-ggplot(surveys, aes(x = all_words_4)) + geom_bar()
+#5
 ggplot(surveys, aes(x = all_words_4, fill = Instant_liking_target)) + geom_bar()
+tb3<-with(surveys, table(all_words_4,Instant_liking_target))
+tb3<-as.data.frame(tb3)
+tb3
+#5a
+ggplot(surveys_b, aes(x = all_words_4, fill = Instant_liking_target)) + geom_bar()
+
+#6
+ggplot(surveys, aes(x = most_often_24, fill = Instant_liking_target)) + geom_bar()
+tb4<-with(surveys, table(Instant_liking_target,most_often_24))
+tb4<-as.data.frame(tb4)
+tb4
+#7
+ggplot(surveys, aes(x = Deo_is_addictive_7, fill = Instant_liking_target)) + geom_bar()
+tb5<-with(surveys, table(Deo_is_addictive_7,Instant_liking_target))
+tb5<-as.data.frame(tb5)
+tb5
+
+#8 w_status_22
+ggplot(surveys, aes(x = w_status_22, fill = Instant_liking_target)) + geom_bar()
+tb6<-with(surveys, table(w_status_22,Instant_liking_target))
+tb6<-as.data.frame(tb6)
+tb6
+#9 m_status_21
+ggplot(surveys, aes(x = m_status_21, fill = Instant_liking_target)) + geom_bar()
+tb7<-with(surveys, table(m_status_21,Instant_liking_target))
+tb7<-as.data.frame(tb7)
+tb7
 names(surveys)
 #--------------var importance
 library(Boruta)
-str(combined_analyse)
-BroutaModel <- Boruta( WON_INDICATOR ~ OPP_DURATION + NUM_SITES + NUM_PRODUCTS
-                       + NUM_OF_FEATURES + MRC_AMOUNT + Total_Prod_instances + COMP_WIN_RATE + branch_geo_region + Cust_Segment
-                       + prcg_model + TOTAL_EMPLOYEES + SALES_VOLUME + VBM_INDICATOR + NEW_OPPTYPE +NUM_REVISIONS+ RECORDTYPE+PRODUCT_WIN_RATE
-                       + MAJ_INDUSTRY_CAT+ Age + MRC_DISC_AMOUNT  , data = combined_analyse, doTrace = 2)
+#install.packages("H:/kukrebh/SF code migration/packages/Rcpp_0.12.10.zip", repos = NULL, type = "win.binary")
+#str(combined_analyse)
+#Train_filtered
+BroutaModel <- Boruta( Instant_liking_target ~ .  , data = Train_filtered, doTrace = 2)
 
 print(BroutaModel)
 plot(BroutaModel, xlab = "", xaxt = "n")
@@ -333,11 +371,13 @@ plot(BroutaModel, xlab = "", xaxt = "n")
 lz<-lapply(1:ncol(BroutaModel$ImpHistory),function(i) BroutaModel$ImpHistory[is.finite(BroutaModel$ImpHistory[,i]),i])
 names(lz) <- colnames(BroutaModel$ImpHistory)
 Labels <- sort(sapply(lz,median))
-axis(side = 1,las=2,labels = names(Labels), at = 1:ncol(BroutaModel$ImpHistory), cex.axis = 0.7)
+axis(side = 1,las=2,labels = names(Labels), at = 1:ncol(BroutaModel$ImpHistory), 
+     cex.axis = 0.7)
 final.boruta <- TentativeRoughFix(BroutaModel)
 print(final.boruta)
-#--------------------modelling------------------------------#
-?glm
+
+
+#--------------------modelling------------------------------#?glm
  model_1<-glm(Instant_liking_target ~  . ,
               family=binomial(link = "logit"), data=Train_filtered,control = list(maxit = 100))
  model_1
@@ -431,6 +471,6 @@ write.csv(total_1,file = "results_1.csv")
 
 
 
-
+nrow(Train_filtered)
 
 
